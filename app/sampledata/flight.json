@@ -1,0 +1,13 @@
+{
+  "data": [
+    {
+      "from": "Волгоград",
+      "to": "Москва",
+      "departureDate": "21 мая в 18:36",
+      "returnDate": "21 мая в 18:36",
+      "price": 1000,
+      "likedByMe": true
+    }
+  ]
+}
+
