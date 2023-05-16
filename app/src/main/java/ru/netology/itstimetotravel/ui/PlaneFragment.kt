@@ -30,10 +30,9 @@ class PlaneFragment : Fragment() {
                 from.text = plain.from
                 to.text = plain.to
                 like.isChecked = plain.likedByMe
-                like.text = R.string.ruble.toString()
                 departureDate.text = plain.departureDate.toString()
                 returnDate.text = plain.returnDate.toString()
-                price.text = plain.price.toString()
+                price.text = plain.price.toString() + context?.getString(R.string.ruble)
                 like.setOnClickListener {
                     viewModel.likeById(plain.id)
                     viewModel.data.observe(viewLifecycleOwner) { plains ->

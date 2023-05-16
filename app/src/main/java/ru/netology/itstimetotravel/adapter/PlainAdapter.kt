@@ -1,7 +1,12 @@
 package ru.netology.itstimetotravel.adapter
 
+
+import android.content.Context
+import android.provider.Settings.Global.getString
 import android.view.LayoutInflater
 import android.view.ViewGroup
+
+
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -38,9 +43,8 @@ class PlainViewHolder(
             to.text = plain.to
             departureDate.text = plain.departureDate.toString()
             returnDate.text = plain.returnDate.toString()
-            price.text = plain.price.toString()
+            price.text = plain.price.toString() + binding.root.context.getString(R.string.ruble)
             like.isChecked = plain.likedByMe
-            like.text = R.string.ruble.toString()
             like.setOnClickListener {
                 onInteractionListener.onLike(plain)
             }
