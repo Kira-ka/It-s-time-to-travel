@@ -5,9 +5,11 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.GET
+import retrofit2.http.Body
+import retrofit2.http.POST
 import ru.netology.itstimetotravel.BuildConfig
-import ru.netology.itstimetotravel.dto.Plain
+import ru.netology.itstimetotravel.dto.FlightResponse
+import ru.netology.itstimetotravel.dto.GetCheapBody
 
 private const val BASE_URL = "${BuildConfig.BASE_URL}/api/avia-service/twirp/aviaapijsonrpcv1.WebAviaService/"
 
@@ -29,8 +31,8 @@ private val retrofit = Retrofit.Builder()
 
 interface AirTravelApiService {
 
-    @GET("GetCheap")
-    suspend fun getAll(): Response<List<Plain>>
+    @POST("GetCheap")
+    suspend fun getAll(@Body body: GetCheapBody = GetCheapBody()): Response<FlightResponse>
 
 }
 

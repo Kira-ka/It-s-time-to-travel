@@ -31,7 +31,7 @@ class FlightRepositoryImpl(private val dao: PlainDao) : FlightRepository {
             }
 
             val body = responce.body() ?: throw RuntimeException("body is null")
-            dao.insert(body.toEntity())
+            dao.insert(body.flights.toEntity())
         } catch (e: IOException) {
             throw RuntimeException("network error")
         } catch (e: Exception) {

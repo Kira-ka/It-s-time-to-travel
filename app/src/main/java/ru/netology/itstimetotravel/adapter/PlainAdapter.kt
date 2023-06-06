@@ -1,8 +1,6 @@
 package ru.netology.itstimetotravel.adapter
 
 
-import android.content.Context
-import android.provider.Settings.Global.getString
 import android.view.LayoutInflater
 import android.view.ViewGroup
 
